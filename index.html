@@ -29,7 +29,7 @@
             text-shadow: 0 0 20px var(--cyan);
             margin-bottom: 5px;
         }
-        .update-info { font-size: 0.8rem; color: var(--muted); margin-top: 10px; font-family: 'Orbitron'; }
+        .update-info { font-size: 0.85rem; color: var(--muted); margin-top: 15px; font-family: 'Rajdhani'; }
         
         nav {
             position: sticky; top: 0;
@@ -54,6 +54,7 @@
             background: var(--bg); color: var(--cyan);
             z-index: 101; font-family: 'Orbitron';
             box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+            border-radius: 5px;
         }
 
         .section {
@@ -62,36 +63,36 @@
             border: 1px solid rgba(0, 255, 255, 0.1);
             border-radius: 8px;
         }
-        h2 { font-family: 'Orbitron'; color: var(--cyan); margin: 25px 0 15px 0; font-size: 1.4rem; text-transform: uppercase; border-bottom: 1px solid rgba(0, 255, 255, 0.2); padding-bottom: 5px; }
+        h2 { font-family: 'Orbitron'; color: var(--cyan); margin: 30px 0 15px 0; font-size: 1.3rem; border-bottom: 1px solid rgba(0, 255, 255, 0.2); padding-bottom: 5px; }
         h3 { color: var(--green); margin: 20px 0 10px 0; font-size: 1.1rem; }
-        p { margin-bottom: 12px; font-size: 1rem; }
+        p { margin-bottom: 12px; font-size: 1.05rem; }
         ul { padding-left: 20px; margin-bottom: 15px; }
         li { margin-bottom: 8px; list-style-type: square; }
         
         .highlight { color: var(--cyan); font-weight: bold; }
-        .warning { color: #ff4d4d; font-weight: bold; }
+        .warning { color: #ff4d4d; font-weight: bold; display: block; margin: 20px 0; border: 1px solid #ff4d4d; padding: 10px; text-align: center; }
         
         .en-content { display: none; }
-        footer { text-align: center; padding: 40px; font-size: .75rem; color: var(--muted); font-family: 'Orbitron'; letter-spacing: 1px; }
+        footer { text-align: center; padding: 40px; font-size: .8rem; color: var(--muted); font-family: 'Orbitron'; letter-spacing: 1px; border-top: 1px solid rgba(0, 255, 255, 0.1); }
     </style>
 </head>
 <body>
 
-<button class="lang-btn" onclick="toggleLang()">ENGLISH VERSION</button>
+<button class="lang-btn" onclick="toggleLang()">SWITCH TO ENGLISH</button>
 
 <header>
     <div class="logo">AURAXVOLVEX</div>
-    <p style="color: var(--green); letter-spacing: 3px; font-size: 0.7rem; font-weight: bold;">BY SXPANICXULTIMATE</p>
+    <p style="color: var(--green); letter-spacing: 3px; font-size: 0.75rem; font-weight: bold;">BY SXPANICXULTIMATE</p>
     <div class="update-info">
-        Aakhri Update: Pre-Submission (Indus App Store)<br>
-        Soch: Manual Efforts – No Data Selling – High Security
+        <b>आखरी अपडेट:</b> जब ऐप टेस्टिंग सफलतापूर्वक समाप्त हुई (Indus App Store पर PhonePe के ज़रिये सबमिट करने से तुरंत पहले)।<br>
+        <b>सोच (Scene):</b> हम सभी कामों को मैन्युअली (खुद से) करते हैं। कुछ चूक हो सकती है लेकिन हम पूरे प्रयास में रहेंगे कि कोई गलती न हो।
     </div>
 </header>
 
 <nav>
-    <a href="#privacy">Privacy</a>
-    <a href="#terms">Terms</a>
-    <a href="#payment">Payments</a>
+    <a href="#privacy">Data</a>
+    <a href="#payment">Payment</a>
+    <a href="#rules">Rules</a>
     <a href="#contact">Contact</a>
 </nav>
 
@@ -99,83 +100,120 @@
     <section class="section">
         <!-- HINDI CONTENT -->
         <div class="hi-content">
-            <p class="warning">YE APP USE KARNE KA MATLAB HAI KI AAP IN SAB NIYAM KO MAANTE HO.</p>
-
-            <h2 id="privacy">🔒 HUM AAPKA KYA DATA LETE HAIN</h2>
-            <p>Hum bahut kam data lete hain. Aapka naam, phone number, ya photo kuch nahi lete. Hum <span class="highlight">Google Firebase</span> use karte hain, aur login method 'Anonymous' hai. Aap anonymous ho, hum aapko nahi jaante.</p>
+            <h1 style="font-family: 'Orbitron'; color: var(--cyan); text-align: center; font-size: 1.5rem;">PRIVACY POLICY AUR TERMS & CONDITIONS</h1>
             
-            <h3>Jo data lete hain wo ye hai:</h3>
-            <ul>
-                <li><span class="highlight">Random App ID:</span> Aapko pehchanne ke liye. App delete/reset karne par ye hat jayega. Purani ID 30 days baad automatic delete ho jayegi. Agar aap 30 din tak app open nahi karte, toh ID aur subscription dono hat jayenge.</li>
-                <li><span class="highlight">Device ID (DEVICE LOCK):</span> Jis phone par subscription liya hai, usi par chalega. Ye ched-chad rokne ke liye hai.</li>
-                <li><span class="highlight">Crash Report:</span> App band hua toh dikkat check karne ke liye.</li>
-                <li><span class="highlight">Email:</span> Hum abhi email accept nahi karte. Hum aapse koi personal info nahi lete, isliye agar kuch ho jaye toh hum zimmedar nahi hain.</li>
-            </ul>
-            <p><b>Jo nahi lete:</b> Naam, Phone Number, Location, SMS, Contacts, Photos, Aadhaar, PAN.</p>
+            <p class="warning">यह ऐप उपयोग करने का मतलब है कि आप इन सभी नियमों को मानते हैं।</p>
 
-            <h2 id="payment">💸 PAISE KA HISAB KITAB</h2>
-            <p>Hum abhi chote developer hain isliye IAP afford nahi kar sakte, tab tak sabhi payments <span class="highlight">UPI</span> ke through honge jo <span class="highlight">Indus App Store</span> ki taraf se allowed hain.</p>
+            <h2 id="privacy">हम आपका क्या डेटा लेते हैं</h2>
+            <p>हम बहुत कम डेटा लेते हैं। आपका नाम, फोन नंबर या फोटो कुछ नहीं लेते। हम Google Firebase का उपयोग करते हैं, और लॉगिन मेथड 'Anonymous' hai. आप गुमनाम हैं, हम आपको नहीं जानते।</p>
+            
+            <h3>जो डेटा लेते हैं वह यह है:</h3>
             <ul>
-                <li><span class="highlight">Security:</span> Aapka UPI PIN ya Bank Detail hamare paas nahi aata. Wo aapke UPI app mein rehta hai. Hum kisi fraud/spam ke liye zimmedar nahi hain.</li>
-                <li><span class="highlight">₹49 Pack (One-Time):</span> Sirf usi device ke liye hai. Reset/Phone badalne par subscription chala jayega. (Note: Agar sirf reinstall se hara hai, toh mail karein, hum activate karke 7 din extra subscription free denge).</li>
-                <li><span class="highlight">₹29 Pack (Themes):</span> Iske niyam bhi ₹49 wale pack jaise hi hain.</li>
-                <li><span class="warning">Refund:</span> Digital cheez hai isliye paisa wapas nahi hoga. Agar issue aaye toh screenshot ke saath mail karein, hum 7-10 dino mein fix karenge.</li>
+                <li><span class="highlight">Random App ID:</span> आपको पहचानने के लिए। अगर ऐप डिलीट/रीइंस्टॉल/डेटा क्लियर या डिवाइस रीसेट किया तो यह हट जाएगा और दोबारा उपयोग करने पर नया ID मिलेगा। पुरानी ID Google Firebase के सर्वर पर 30 दिनों के लिए रहेगी और उसके बाद अपने आप डिलीट हो जाएगी। अगर आप ऐप को 30 दिनों में एक बार भी ओपन नहीं करते, तब भी आपकी ID डिलीट हो जाएगी और इन-ऐप सब्सक्रिप्शन भी हट जाएगी।</li>
+                <li><span class="highlight">Device ID:</span> जिस फोन पर सब्सक्रिप्शन लिया है, उसी पर चलेगा। इसे 'DEVICE LOCK' सिस्टम कहते हैं जो छेड़छाड़ रोकने के लिए है।</li>
+                <li><span class="highlight">Crash Report:</span> ऐप बंद हुआ तो क्या दिक्कत आई, यह देखने के लिए।</li>
+                <li><span class="highlight">Email:</span> हम अभी ईमेल स्वीकार नहीं करते क्योंकि यूज़र की सुरक्षा हमारे लिए बहुत ज़रूरी है। हम आपसे कोई भी व्यक्तिगत जानकारी नहीं लेते, इसलिए अगर कुछ हो जाए तो हम किसी भी तरह से दोषी या ज़िम्मेदार नहीं हैं।</li>
+            </ul>
+            <p><b>जो नहीं लेते:</b> नाम, फोन नंबर, लोकेशन, SMS, कॉन्टैक्ट्स, फोटो, आधार, PAN।</p>
+
+            <h2 id="payment">पैसे का हिसाब-किताब</h2>
+            <p>हम अभी छोटे डेवलपर हैं इसलिए IAP अफोर्ड नहीं कर सकते, पर उस पर काम कर रहे हैं। तब तक सभी सब्सक्रिप्शन पेमेंट्स UPI ऐप्स के माध्यम से होंगे जो Indus App Store की तरफ से अनुमति प्राप्त हैं। ये ट्रांजैक्शन सीधे यूज़र और डेवलपर के बीच होंगे।</p>
+            
+            <p><span class="highlight">Security:</span> आपका UPI PIN, कार्ड नंबर या बैंक डिटेल हमारे पास कभी नहीं आता। यह सब आपके UPI ऐप की ट्रांजैक्शन हिस्ट्री में रहता है। हम किसी भी तरह के फ्रॉड/स्पैम के लिए ज़िम्मेदार नहीं हैं।</p>
+            
+            <h3>Subscription के प्रकार:</h3>
+            <ul>
+                <li><span class="highlight">One-Time ₹49 वाला:</span> यह सिर्फ उसी डिवाइस के लिए है जिस पर लिया गया है। फोन बदला या रीसेट किया तो Pro चला जाएगा और वापस नहीं मिलेगा। (Note: अगर ऐप रीइंस्टॉल/डेटा क्लियर की वजह से सब्सक्रिप्शन हट गया है पर डिवाइस वही है, तो सपोर्ट बटन से मेल करें, हम दोबारा एक्टिवेट कर देंगे और भरपाई के लिए बाकी सब्सक्रिप्शन 7 दिन के लिए फ्री दे देंगे।)</li>
+                <li><span class="highlight">One-Time ₹29 वाला:</span> यह ऐप थीम्स कस्टमाइज़ करने के लिए है। इसके नियम भी ₹49 वाले पैक जैसे ही हैं।</li>
+                <li><span class="warning">Refund:</span> डिजिटल चीज़ है इसलिए पैसा वापस नहीं होगा। अगर पैसा कट गया और Pro चालू नहीं हुआ, तो [help@auraxvolvex.app] पर स्क्रीनशॉट मेल करें। हम 7-10 दिनों में ठीक करने का प्रयास करेंगे।</li>
             </ul>
 
-            <h2 id="terms">📜 NIYAM AUR SHARTEIN</h2>
-            <h3>Aapka Data Kaha Jata Hai?</h3>
+            <h2 id="storage">आपका डेटा कहाँ जाता है</h2>
+            <p>सिर्फ इन 3 जगह पर ऐप की सही कार्यप्रणाली के लिए जाता है:</p>
             <ul>
-                <li>Indus App Store, Google Firebase, aur Sentry (Crash reports).</li>
+                <li>Indus App Store: क्योंकि यह उनकी ऐप है तो सुरक्षित होगी।</li>
+                <li>Google Firebase: App ID और सब्सक्रिप्शन एक्सेस के लिए।</li>
+                <li>Sentry: Crash रिपोर्ट के लिए।</li>
             </ul>
-            <h3>Aap Kya Nahi Kar Sakte?</h3>
-            <ul>
-                <li>App ko hack/mod karke Pro free lene ka prayas mat karna.</li>
-                <li>Code copy karke apna app mat banana.</li>
-                <li>Galat kaam kiya toh App ID aur subscription bina baat-chit ke band kar di jayegi.</li>
-            </ul>
-            <h3>Zimmedari (Guarantee)</h3>
-            <p>App "As-Is" hai. 100% chalne ki guarantee nahi hai, par hum theek karne ka poora prayas karenge. Hum bill nahi dete, transaction ID hi aapka bill hai.</p>
-            <p><b>Bacche:</b> 13+ (Worldwide) aur 18+ (India). Students apne Parents ki anumati se use karein.</p>
+            <p>हम आपका डेटा किसी को नहीं बेचते और न ही उसमें छेड़छाड़ करते हैं।</p>
 
-            <h2 id="contact">📩 SAMPARK (CONTACT)</h2>
-            <p>Koi sawal ho toh <span class="highlight">help@auraxvolvex.app</span> pe mail karein. Hum 7-10 din mein jawab denge.</p>
+            <h2 id="delete">डेटा डिलीट और सब्सक्रिप्शन कैंसिल</h2>
+            <ul>
+                <li><span class="highlight">Delete My Data:</span> इससे आपका सेव किया हुआ डेटा और स्कोर डिलीट हो जाएगा। सब्सक्रिप्शन भी हट जाएगा, पर आप हमें स्क्रीनशॉट भेजकर उसे वापस एक्टिवेट करवा सकते हैं।</li>
+                <li><span class="highlight">Subscription Cancel:</span> यह कैंसिल नहीं हो सकता क्योंकि यह लाइफटाइम (उसी डिवाइस के लिए) है और रिन्यू नहीं होता।</li>
+                <li><span class="highlight">App Uninstall:</span> फोन से सब हट जाएगा और सर्वर डेटा 30 दिनों में डिलीट हो जाएगा।</li>
+            </ul>
+
+            <h2 id="rules">आप क्या नहीं कर सकते</h2>
+            <ul>
+                <li>ऐप को हैक या मॉड करके Pro फ्री में लेने का प्रयास मत करना।</li>
+                <li>ऐप का कोड कॉपी करके अपना ऐप मत बनाना।</li>
+                <li>गलत काम किया तो App ID और सब्सक्रिप्शन बिना किसी बातचीत के बंद कर दी जाएगी।</li>
+            </ul>
+
+            <h2 id="guarantee">बिल, बच्चे और गारंटी</h2>
+            <ul>
+                <li><span class="highlight">Bill:</span> हम बिल नहीं देते। आपकी ट्रांजैक्शन ID ही आपका बिल है।</li>
+                <li><span class="highlight">बच्चे:</span> यह ऐप 13+ (Worldwide) और 18+ (India) के लिए है। स्टूडेंट्स इसे अपने Parents/Guardian की अनुमति से ही उपयोग करें।</li>
+                <li><span class="highlight">Guarantee:</span> ऐप जैसा है वैसा ही दिया गया है। 100% चलने की गारंटी नहीं है, पर हम ठीक करने का पूरा प्रयास करेंगे।</li>
+            </ul>
+
+            <h2>नियम बदल सकते हैं</h2>
+            <p>हम इन नियमों को कभी भी बदल सकते हैं। अपडेट के बाद ऐप उपयोग करने का मतलब है कि आप नए नियमों को स्वीकार करते हैं। (Note: ऐप के 'SYSTEM PANEL' में दिए गए बटन से आप हमेशा नियम पढ़ सकते हैं।)</p>
+
+            <h2 id="contact">संपर्क (CONTACT)</h2>
+            <p>कोई सवाल या समस्या हो तो <span class="highlight">help@auraxvolvex.app</span> पर मेल करें। हम 7-10 दिनों के अंदर जवाब देने का प्रयास करेंगे।</p>
         </div>
 
         <!-- ENGLISH CONTENT -->
         <div class="en-content">
-            <p class="warning">BY USING THIS APP, YOU AGREE TO THESE TERMS AND CONDITIONS.</p>
-
-            <h2 id="privacy-en">🔒 DATA COLLECTION</h2>
-            <p>We value your privacy. We do not collect your name, phone number, or photos. We use <span class="highlight">Google Firebase</span> with 'Anonymous Login'. You remain anonymous to us.</p>
+            <h1 style="font-family: 'Orbitron'; color: var(--cyan); text-align: center; font-size: 1.5rem;">PRIVACY POLICY & TERMS & CONDITIONS</h1>
             
-            <h3>Data We Collect:</h3>
+            <p class="warning">BY USING THIS APP, YOU AGREE TO ALL THESE TERMS AND RULES.</p>
+
+            <h2 id="privacy-en">WHAT DATA WE COLLECT</h2>
+            <p>We collect very minimal data. We do not take your name, phone number, or photos. We use Google Firebase, and the login method is 'Anonymous'. You remain anonymous; we do not know you.</p>
+            
+            <h3>The data we collect is:</h3>
             <ul>
-                <li><span class="highlight">Random App ID:</span> For identification. Deleting the app removes it. Inactive IDs are deleted after 30 days, which also removes the subscription.</li>
-                <li><span class="highlight">Device ID (DEVICE LOCK):</span> Subscriptions are locked to the hardware to prevent unauthorized use.</li>
-                <li><span class="highlight">Crash Reports:</span> To fix bugs and improve performance.</li>
-                <li><span class="highlight">Personal Info:</span> We do not accept emails or personal data. We are not liable for any issues since no personal info is stored.</li>
+                <li><span class="highlight">Random App ID:</span> To identify you. If the app is deleted/reinstalled/cleared or device reset, this ID will be removed and a new one generated. Old IDs remain on Google Firebase servers for 30 days and are then automatically deleted. If you don't open the app once in 30 days, your ID and in-app subscription will be deleted.</li>
+                <li><span class="highlight">Device ID:</span> The subscription works only on the phone it was purchased on. This is called the 'DEVICE LOCK' system to prevent tampering.</li>
+                <li><span class="highlight">Crash Report:</span> To see what went wrong if the app crashes.</li>
+                <li><span class="highlight">Email:</span> We currently do not accept emails for user security. Since we take no personal info, we are not liable or responsible if anything happens.</li>
+            </ul>
+            <p><b>What we DON'T collect:</b> Name, Phone Number, Location, SMS, Contacts, Photos, Aadhaar, PAN.</p>
+
+            <h2 id="payment-en">PAYMENT & SUBSCRIPTIONS</h2>
+            <p>As small developers, we use UPI app payments allowed by the Indus App Store. These transactions are directly between the user and the developer.</p>
+            
+            <p><span class="highlight">Security:</span> Your UPI PIN, Card numbers, or Bank details never reach us. They stay in your UPI app's history. We are not responsible for any fraud/spam.</p>
+            
+            <h3>Subscription Types:</h3>
+            <ul>
+                <li><span class="highlight">One-Time ₹49:</span> Valid only for the device it was purchased on. Changing or resetting the phone will lose the Pro status. (Note: If lost due to reinstall on the same device, email us; we will reactivate it and give 7 days of other subscriptions free as compensation.)</li>
+                <li><span class="highlight">One-Time ₹29:</span> For customizing app themes. Rules are the same as the ₹49 pack.</li>
+                <li><span class="warning">Refund:</span> Digital goods are non-refundable. If payment is made but Pro isn't active, email a screenshot to [help@auraxvolvex.app]. We will try to fix it in 7-10 days.</li>
             </ul>
 
-            <h2 id="payment-en">💸 PAYMENTS & SUBSCRIPTIONS</h2>
-            <p>Payments are currently handled via <span class="highlight">UPI</span> as allowed by <span class="highlight">Indus App Store</span>.</p>
+            <h2 id="rules-en">WHAT YOU CANNOT DO</h2>
             <ul>
-                <li><span class="highlight">Security:</span> Your UPI PIN/Bank details are never shared with us.</li>
-                <li><span class="highlight">₹49 / ₹29 Packs:</span> One-time payment for the current device only. Non-transferable if the device is changed or reset.</li>
-                <li><span class="warning">Refund Policy:</span> All digital purchases are non-refundable. For technical issues, contact us with a screenshot.</li>
+                <li>Do not try to hack or mod the app for free Pro access.</li>
+                <li>Do not copy the app code to make your own app.</li>
+                <li>Violations will lead to immediate termination of App ID and subscription without discussion.</li>
             </ul>
 
-            <h2 id="terms-en">📜 USAGE RULES</h2>
+            <h2 id="guarantee-en">BILL, CHILDREN & GUARANTEE</h2>
             <ul>
-                <li>No Hacking/Modding for free Pro access.</li>
-                <li>No copying or cloning of the app code.</li>
-                <li>Violations will result in immediate termination of access without notice.</li>
+                <li><span class="highlight">Bill:</span> We do not provide bills. Your Transaction ID is your bill.</li>
+                <li><span class="highlight">Children:</span> For 13+ (Worldwide) and 18+ (India). Students should use it with Parent/Guardian permission.</li>
+                <li><span class="highlight">Guarantee:</span> The app is provided "As-Is". No 100% guarantee of performance, but we will strive to fix issues.</li>
             </ul>
 
-            <h3>Liability & Age</h3>
-            <p>The app is provided "As-Is". We offer no 100% guarantee but will strive for excellence. Users must be 13+ (Global) or 18+ (India). Students should use it with Guardian permission.</p>
+            <h2>TERMS MAY CHANGE</h2>
+            <p>We can change these rules anytime. Using the app after an update means you accept the new terms.</p>
 
-            <h2 id="contact-en">📩 CONTACT</h2>
-            <p>Email us at: <span class="highlight">help@auraxvolvex.app</span>. Response time: 7-10 days.</p>
+            <h2 id="contact-en">CONTACT</h2>
+            <p>Email us at <span class="highlight">help@auraxvolvex.app</span> for any questions. We will try to respond within 7-10 days.</p>
         </div>
     </section>
 </main>
@@ -189,15 +227,18 @@
         const hi = document.querySelectorAll('.hi-content');
         const en = document.querySelectorAll('.en-content');
         const btn = document.querySelector('.lang-btn');
+        const update = document.querySelector('.update-info');
 
         if(hi[0].style.display === 'none'){
             hi.forEach(e => e.style.display = 'block');
             en.forEach(e => e.style.display = 'none');
-            btn.innerText = "ENGLISH VERSION";
+            btn.innerText = "SWITCH TO ENGLISH";
+            update.innerHTML = "<b>आखरी अपडेट:</b> जब ऐप टेस्टिंग सफलतापूर्वक समाप्त हुई...<br><b>सोच:</b> हम सभी कामों को मैन्युअली करते हैं...";
         } else {
             hi.forEach(e => e.style.display = 'none');
             en.forEach(e => e.style.display = 'block');
-            btn.innerText = "HINDI VERSION";
+            btn.innerText = "HINDI VERSION PE JAYEIN";
+            update.innerHTML = "<b>Last Update:</b> Post successful testing (Pre-Indus App Store submission).<br><b>Scene:</b> We do everything manually. We strive for perfection.";
         }
     }
 </script>
