@@ -1,502 +1,168 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AURAXVOLVEX – Privacy Policy & Terms</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --bg-deep: #020812;
-      --bg-card: rgba(0, 255, 255, 0.04);
-      --cyan: #00f5ff;
-      --cyan-dim: #00c8d4;
-      --green: #39ff6a;
-      --green-dim: #1aad45;
-      --text-main: #c8e8ec;
-      --text-muted: #6a9aaa;
-      --border: rgba(0, 245, 255, 0.15);
-      --glow-cyan: 0 0 20px rgba(0,245,255,0.4), 0 0 60px rgba(0,245,255,0.15);
-      --glow-green: 0 0 20px rgba(57,255,106,0.4), 0 0 60px rgba(57,255,106,0.1);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--bg-deep);
-      color: var(--text-main);
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 16px;
-      line-height: 1.8;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* ── GRID BACKGROUND ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(0,245,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,245,255,0.04) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* radial ambient glow */
-    body::after {
-      content: '';
-      position: fixed;
-      top: -20%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80vw;
-      height: 60vh;
-      background: radial-gradient(ellipse, rgba(0,245,255,0.07) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ── HEADER ── */
-    header {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      padding: 60px 20px 40px;
-    }
-
-    .logo-line {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2.2rem, 8vw, 5rem);
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      color: var(--cyan);
-      text-shadow: var(--glow-cyan);
-      animation: pulse-glow 3s ease-in-out infinite;
-    }
-
-    @keyframes pulse-glow {
-      0%, 100% { text-shadow: 0 0 20px rgba(0,245,255,0.5), 0 0 60px rgba(0,245,255,0.2); }
-      50%       { text-shadow: 0 0 30px rgba(0,245,255,0.9), 0 0 90px rgba(0,245,255,0.35); }
-    }
-
-    .by-line {
-      margin-top: 6px;
-      font-family: 'Rajdhani', sans-serif;
-      font-size: clamp(0.8rem, 2.5vw, 1rem);
-      font-weight: 300;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--green);
-      text-shadow: 0 0 10px rgba(57,255,106,0.5);
-    }
-
-    .header-divider {
-      margin: 30px auto 0;
-      width: min(500px, 80%);
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--cyan), var(--green), transparent);
-      box-shadow: 0 0 12px rgba(0,245,255,0.3);
-    }
-
-    /* ── NAV TABS ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      padding: 16px 20px;
-      background: rgba(2,8,18,0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav a {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-decoration: none;
-      padding: 8px 20px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      transition: all 0.3s;
-      background: rgba(0,245,255,0.03);
-    }
-
-    nav a:hover {
-      color: var(--cyan);
-      border-color: var(--cyan);
-      box-shadow: 0 0 16px rgba(0,245,255,0.2);
-      background: rgba(0,245,255,0.07);
-    }
-
-    /* ── MAIN WRAPPER ── */
-    main {
-      position: relative;
-      z-index: 5;
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 50px 20px 80px;
-    }
-
-    /* ── SECTION CARD ── */
-    .section-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: clamp(24px, 5vw, 48px);
-      margin-bottom: 40px;
-      backdrop-filter: blur(8px);
-      position: relative;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .section-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* corner accent */
-    .section-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 60px; height: 3px;
-      background: linear-gradient(90deg, var(--cyan), transparent);
-    }
-    .section-card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px; height: 60px;
-      background: linear-gradient(180deg, var(--cyan), transparent);
-    }
-
-    /* green accent variant */
-    .section-card.green-accent::before { background: linear-gradient(90deg, var(--green), transparent); }
-    .section-card.green-accent::after  { background: linear-gradient(180deg, var(--green), transparent); }
-
-    .section-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.1rem, 3.5vw, 1.6rem);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      margin-bottom: 24px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-card:not(.green-accent) .section-title { color: var(--cyan); text-shadow: 0 0 12px rgba(0,245,255,0.4); }
-    .section-card.green-accent .section-title       { color: var(--green); text-shadow: 0 0 12px rgba(57,255,106,0.4); }
-
-    /* ── CONTENT TYPOGRAPHY ── */
-    h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--cyan-dim);
-      text-transform: uppercase;
-      margin: 28px 0 10px;
-    }
-
-    .section-card.green-accent h3 { color: var(--green-dim); }
-
-    p {
-      color: var(--text-main);
-      font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 12px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 4px;
-      margin-bottom: 12px;
-    }
-
-    ul li {
-      position: relative;
-      padding-left: 22px;
-      margin-bottom: 8px;
-      color: var(--text-main);
-    }
-
-    ul li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--cyan);
-      font-size: 0.85em;
-    }
-
-    .section-card.green-accent ul li::before { color: var(--green); }
-
-    .highlight-box {
-      background: rgba(0,245,255,0.05);
-      border-left: 3px solid var(--cyan);
-      border-radius: 0 6px 6px 0;
-      padding: 14px 18px;
-      margin: 16px 0;
-      font-size: 0.95rem;
-    }
-
-    .section-card.green-accent .highlight-box {
-      background: rgba(57,255,106,0.05);
-      border-left-color: var(--green);
-    }
-
-    /* ── LAST UPDATED ── */
-    .last-updated {
-      text-align: center;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: var(--text-muted);
-      margin-bottom: 30px;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      position: relative;
-      z-index: 5;
-      text-align: center;
-      padding: 30px 20px 40px;
-      border-top: 1px solid var(--border);
-    }
-
-    footer p {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      color: var(--text-muted);
-    }
-
-    footer span { color: var(--cyan); }
-
-    /* ── SCROLL TO TOP ── */
-    #scrollTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 200;
-      width: 44px; height: 44px;
-      background: rgba(0,245,255,0.1);
-      border: 1px solid var(--cyan);
-      border-radius: 6px;
-      color: var(--cyan);
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s;
-      box-shadow: 0 0 16px rgba(0,245,255,0.2);
-    }
-
-    #scrollTop:hover { background: rgba(0,245,255,0.2); box-shadow: var(--glow-cyan); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      nav { gap: 8px; flex-wrap: wrap; }
-      nav a { font-size: 0.6rem; padding: 6px 14px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURAXVOLVEX – Privacy Policy & Terms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #020812;
+            --glass: rgba(0, 255, 255, 0.05);
+            --cyan: #00f5ff;
+            --green: #39ff6a;
+            --text: #c8e8ec;
+            --muted: #6a9aaa;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.7;
+        }
+        header { text-align: center; padding: 60px 20px; }
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            color: var(--cyan);
+            text-shadow: 0 0 25px var(--cyan);
+        }
+        nav {
+            position: sticky; top: 0;
+            display: flex; justify-content: center;
+            gap: 12px; padding: 14px;
+            background: rgba(2, 8, 18, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+        nav a {
+            color: var(--muted); text-decoration: none;
+            padding: 8px 18px; border: 1px solid rgba(0, 255, 255, 0.2);
+            transition: .3s; font-size: 0.9rem;
+        }
+        nav a:hover { color: var(--cyan); border-color: var(--cyan); box-shadow: 0 0 12px var(--cyan); }
+        .lang-btn {
+            position: fixed; top: 15px; right: 15px;
+            padding: 8px 15px; border: 1px solid var(--cyan);
+            cursor: pointer; font-size: .8rem;
+            background: rgba(0, 245, 255, 0.1); color: var(--cyan);
+            z-index: 101; font-family: 'Orbitron';
+        }
+        .section {
+            max-width: 880px; margin: 40px auto;
+            padding: 35px; background: var(--glass);
+            border: 1px solid rgba(0, 255, 255, 0.15);
+            border-radius: 12px; backdrop-filter: blur(10px);
+        }
+        h2 { font-family: 'Orbitron'; color: var(--cyan); margin-bottom: 18px; }
+        h3 { color: var(--green); margin-top: 20px; border-left: 3px solid var(--green); padding-left: 10px; }
+        p { margin-top: 10px; }
+        ul { padding-left: 25px; margin-top: 10px; }
+        li { margin-bottom: 5px; }
+        .en-content { display: none; }
+        footer { text-align: center; margin: 60px 40px; font-size: .8rem; color: var(--muted); font-family: 'Orbitron'; }
+        span.cyan { color: var(--cyan); }
+    </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo-line">AURAXVOLVEX</div>
-    <div class="by-line">by SxPanicXUltimate</div>
-    <div class="header-divider"></div>
-  </header>
+<button class="lang-btn" onclick="toggleLang()">SWITCH TO ENGLISH</button>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#privacy">🔒 Privacy Policy</a>
-    <a href="#terms">📜 Terms & Conditions</a>
-  </nav>
+<header>
+    <div class="logo">AURAXVOLVEX</div>
+    <p style="font-size: 0.8rem; letter-spacing: 2px; color: var(--green);">BY SXPANICXULTIMATE</p>
+</header>
 
-  <!-- MAIN -->
-  <main>
-    <div class="last-updated">// LAST UPDATED: MAY 2025 · VERSION 1.0 //</div>
+<nav>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms & Conditions</a>
+</nav>
 
-    <!-- ══════════════════════════════════════════
-         PRIVACY POLICY
-    ══════════════════════════════════════════ -->
-    <div class="section-card" id="privacy">
-      <div class="section-title">🔒 Privacy Policy</div>
+<main>
+    <!-- PRIVACY SECTION -->
+    <section class="section" id="privacy">
+        <div class="hi-content">
+            <h2>🔒 Privacy Policy (गोपनीयता नीति)</h2>
+            <p>यह नीति AURAXVOLVEX द्वारा आपके अधिकारों की सुरक्षा के लिए बनाई गई है।</p>
+            <h3>1. Anonymous Identity (गुमनाम पहचान)</h3>
+            <p>हम कोई भी व्यक्तिगत डेटा (नाम, ईमेल, नंबर) नहीं मांगते।</p>
+            <ul>
+                <li>हर डिवाइस को एक <b>Anonymous ID</b> मिलती है।</li>
+                <li>अगर आप 30 दिन तक ऐप इस्तेमाल नहीं करते, तो यह ID हमारे सर्वर से डिलीट हो जाती है।</li>
+                <li>ऐप डिलीट करने पर आपकी पहचान पूरी तरह खत्म हो जाती है।</li>
+            </ul>
+            <h3>2. Third-Party Services</h3>
+            <p>हम Google Firebase का उपयोग केवल डेटाबेस और Sentry का उपयोग क्रैश रिपोर्टिंग के लिए करते हैं।</p>
+        </div>
 
-      <div class="highlight-box">
-        यह Privacy Policy AURAXVOLVEX ("हम", "हमारा", "ऐप") द्वारा बनाई गई है। इसे ध्यान से पढ़ें — इसमें बताया गया है कि हम आपकी जानकारी कैसे इस्तेमाल करते हैं।
-      </div>
+        <div class="en-content">
+            <h2>🔒 Privacy Policy</h2>
+            <p>This policy outlines how AURAXVOLVEX handles your information.</p>
+            <h3>1. Anonymous Identity</h3>
+            <p>We do not collect personal data (Name, Email, or Phone Number).</p>
+            <ul>
+                <li>Each user is assigned a unique <b>Anonymous ID</b>.</li>
+                <li>ID is automatically deleted after 30 days of inactivity.</li>
+                <li>Reinstalling the app generates a completely new identity.</li>
+            </ul>
+        </div>
+    </section>
 
-      <h3>1. हम क्या जानकारी एकत्र करते हैं?</h3>
-      <p>हम आपसे निम्नलिखित प्रकार की जानकारी एकत्र कर सकते हैं:</p>
-      <ul>
-        <li>खाता जानकारी: नाम, ईमेल पता, यूज़रनेम</li>
-        <li>डिवाइस जानकारी: डिवाइस का प्रकार, ऑपरेटिंग सिस्टम, IP एड्रेस</li>
-        <li>उपयोग डेटा: ऐप में आपकी गतिविधियाँ और प्राथमिकताएँ</li>
-        <li>तकनीकी लॉग्स: क्रैश रिपोर्ट, परफ़ॉर्मेंस डेटा</li>
-      </ul>
+    <!-- TERMS SECTION -->
+    <section class="section" id="terms">
+        <div class="hi-content">
+            <h2>📜 Terms & Conditions (नियम और शर्तें)</h2>
+            <h3>1. Payments (भुगतान)</h3>
+            <p>सभी सब्सक्रिप्शन (₹49 / ₹29) सीधे UPI के माध्यम से होते हैं।</p>
+            <ul>
+                <li>हम कोई बैंक या कार्ड डिटेल्स स्टोर नहीं करते।</li>
+                <li>एक बार किया गया भुगतान किसी भी हाल में <b>Refund</b> नहीं होगा।</li>
+            </ul>
+            <h3>2. Device Lock</h3>
+            <p>एक सब्सक्रिप्शन केवल एक ही डिवाइस (Hardware ID) पर चलेगा। इसे दूसरे फोन पर ट्रांसफर नहीं किया जा सकता।</p>
+            <h3>3. Legal Disclaimer</h3>
+            <p>हम किसी भी हार्डवेयर डैमेज या डेटा लॉस के लिए जिम्मेदार नहीं होंगे। ऐप को मॉडिफाई करना सख्त मना है।</p>
+        </div>
 
-      <h3>2. जानकारी का उपयोग</h3>
-      <p>एकत्रित जानकारी का उपयोग हम निम्नलिखित कार्यों के लिए करते हैं:</p>
-      <ul>
-        <li>ऐप की सेवाएँ प्रदान करना और उन्हें बेहतर बनाना</li>
-        <li>तकनीकी समस्याओं का निवारण करना</li>
-        <li>नए फीचर्स और अपडेट के बारे में सूचित करना</li>
-        <li>उपयोगकर्ता अनुभव को व्यक्तिगत बनाना</li>
-        <li>सुरक्षा और धोखाधड़ी की रोकथाम</li>
-      </ul>
+        <div class="en-content">
+            <h2>📜 Terms & Conditions</h2>
+            <h3>1. Payments</h3>
+            <p>Payments (₹49 / ₹29) are handled securely via UPI.</p>
+            <ul>
+                <li>No banking or card details are stored by us.</li>
+                <li>All purchases are final. <b>No Refunds</b> will be issued.</li>
+            </ul>
+            <h3>2. Device Lock</h3>
+            <p>Subscriptions are locked to a single device (Hardware ID) and are non-transferable.</p>
+            <h3>3. Liability</h3>
+            <p>We are not responsible for any hardware damage or data loss. Hacking or modifying the app is prohibited.</p>
+        </div>
+    </section>
+</main>
 
-      <h3>3. डेटा सुरक्षा</h3>
-      <p>हम आपकी व्यक्तिगत जानकारी की सुरक्षा को गंभीरता से लेते हैं। हम उद्योग-मानक एन्क्रिप्शन और सुरक्षा उपाय अपनाते हैं। हालाँकि, इंटरनेट पर कोई भी प्रसारण 100% सुरक्षित नहीं होता।</p>
+<footer>
+    © <span class="cyan">AURAXVOLVEX</span> · ALL RIGHTS RESERVED BY SXPANICXULTIMATE
+</footer>
 
-      <h3>4. तृतीय पक्षों के साथ साझाकरण</h3>
-      <p>हम आपकी व्यक्तिगत जानकारी तृतीय पक्षों को नहीं बेचते। हम निम्नलिखित परिस्थितियों में जानकारी साझा कर सकते हैं:</p>
-      <ul>
-        <li>आपकी स्पष्ट सहमति से</li>
-        <li>कानूनी बाध्यताओं का पालन करने के लिए</li>
-        <li>सेवा प्रदाताओं के साथ जो हमारी ओर से काम करते हैं</li>
-        <li>ऐप की सुरक्षा के लिए यदि आवश्यक हो</li>
-      </ul>
+<script>
+    function toggleLang(){
+        const hi = document.querySelectorAll('.hi-content');
+        const en = document.querySelectorAll('.en-content');
+        const btn = document.querySelector('.lang-btn');
 
-      <h3>5. कुकीज़ और ट्रैकिंग</h3>
-      <p>AURAXVOLVEX बेहतर उपयोगकर्ता अनुभव के लिए कुकीज़ और समान तकनीकों का उपयोग कर सकता है। आप अपने डिवाइस की सेटिंग्स से कुकीज़ को नियंत्रित कर सकते हैं।</p>
-
-      <h3>6. बच्चों की गोपनीयता</h3>
-      <p>AURAXVOLVEX 13 वर्ष से कम आयु के बच्चों के लिए नहीं है। हम जानबूझकर 13 वर्ष से कम आयु के बच्चों से व्यक्तिगत जानकारी एकत्र नहीं करते।</p>
-
-      <h3>7. आपके अधिकार</h3>
-      <ul>
-        <li>अपनी जानकारी देखने और उसे सही करने का अधिकार</li>
-        <li>अपनी जानकारी हटाने का अनुरोध करने का अधिकार</li>
-        <li>डेटा प्रोसेसिंग पर आपत्ति का अधिकार</li>
-        <li>डेटा पोर्टेबिलिटी का अधिकार</li>
-      </ul>
-
-      <h3>8. नीति में बदलाव</h3>
-      <p>हम इस Privacy Policy को कभी भी अपडेट कर सकते हैं। महत्वपूर्ण बदलावों की सूचना ऐप के माध्यम से दी जाएगी। इस पेज को नियमित रूप से जाँचते रहें।</p>
-
-      <h3>9. संपर्क करें</h3>
-      <div class="highlight-box">
-        किसी भी प्रश्न या चिंता के लिए हमसे संपर्क करें:<br/>
-        📧 <strong>SxPanicXUltimate</strong> (ऐप के माध्यम से)<br/>
-        🌐 AURAXVOLVEX Official Support Channel
-      </div>
-    </div>
-
-    <!-- ══════════════════════════════════════════
-         TERMS & CONDITIONS
-    ══════════════════════════════════════════ -->
-    <div class="section-card green-accent" id="terms">
-      <div class="section-title">📜 Terms & Conditions</div>
-
-      <div class="highlight-box">
-        AURAXVOLVEX का उपयोग करके, आप इन नियमों और शर्तों ("T&C") से सहमत होते हैं। यदि आप सहमत नहीं हैं, तो कृपया ऐप का उपयोग न करें।
-      </div>
-
-      <h3>1. स्वीकृति</h3>
-      <p>इन शर्तों को ध्यानपूर्वक पढ़ें। AURAXVOLVEX का उपयोग करके आप इन सभी शर्तों से बाध्य होते हैं। ये शर्तें किसी भी समय बिना पूर्व सूचना के बदली जा सकती हैं।</p>
-
-      <h3>2. खाता जिम्मेदारी</h3>
-      <ul>
-        <li>आप अपने खाते की सुरक्षा के लिए स्वयं जिम्मेदार हैं</li>
-        <li>अपना पासवर्ड किसी के साथ साझा न करें</li>
-        <li>किसी भी संदिग्ध गतिविधि की तुरंत सूचना दें</li>
-        <li>एक व्यक्ति केवल एक खाता रख सकता है</li>
-      </ul>
-
-      <h3>3. उपयोग की अनुमेय शर्तें</h3>
-      <p>आप AURAXVOLVEX का उपयोग केवल कानूनी और नैतिक उद्देश्यों के लिए कर सकते हैं। निम्नलिखित कार्य प्रतिबंधित हैं:</p>
-      <ul>
-        <li>किसी भी प्रकार की हैकिंग या अनधिकृत पहुँच</li>
-        <li>स्पैम, फ़िशिंग या भ्रामक सामग्री फैलाना</li>
-        <li>दूसरे उपयोगकर्ताओं को परेशान करना या धमकाना</li>
-        <li>कॉपीराइट या बौद्धिक संपदा का उल्लंघन</li>
-        <li>ऐप की कार्यक्षमता में हस्तक्षेप करना</li>
-        <li>नकली या भ्रामक जानकारी फैलाना</li>
-      </ul>
-
-      <h3>4. बौद्धिक संपदा</h3>
-      <p>AURAXVOLVEX का नाम, लोगो, डिज़ाइन, और सभी सामग्री SxPanicXUltimate की बौद्धिक संपदा है। बिना लिखित अनुमति के इसका उपयोग, पुनरुत्पादन, या वितरण प्रतिबंधित है।</p>
-
-      <h3>5. उपयोगकर्ता द्वारा बनाई सामग्री</h3>
-      <ul>
-        <li>आप जो भी सामग्री ऐप पर साझा करते हैं, उसके लिए आप स्वयं जिम्मेदार हैं</li>
-        <li>AURAXVOLVEX को आपकी सामग्री प्रदर्शित करने का अधिकार है</li>
-        <li>आपत्तिजनक या अवैध सामग्री हटाने का अधिकार हमारे पास है</li>
-      </ul>
-
-      <h3>6. सेवा की उपलब्धता</h3>
-      <p>हम 24/7 सेवा प्रदान करने का प्रयास करते हैं, लेकिन रखरखाव या तकनीकी कारणों से सेवा बाधित हो सकती है। इसके लिए AURAXVOLVEX जिम्मेदार नहीं होगा।</p>
-
-      <h3>7. खाता समाप्ति</h3>
-      <p>नियमों के उल्लंघन पर हम बिना पूर्व सूचना के आपका खाता निलंबित या स्थायी रूप से बंद कर सकते हैं। आप स्वयं भी कभी भी अपना खाता बंद कर सकते हैं।</p>
-
-      <h3>8. देयता की सीमा</h3>
-      <div class="highlight-box">
-        AURAXVOLVEX किसी भी प्रत्यक्ष, अप्रत्यक्ष, आकस्मिक, या परिणामी नुकसान के लिए उत्तरदायी नहीं होगा जो ऐप के उपयोग या अनुपयोग से उत्पन्न हो।
-      </div>
-
-      <h3>9. गवर्निंग लॉ</h3>
-      <p>ये Terms भारतीय कानून के अंतर्गत संचालित होंगे। किसी भी विवाद की स्थिति में भारतीय न्यायालयों का अधिकार क्षेत्र मान्य होगा।</p>
-
-      <h3>10. परिवर्तन</h3>
-      <p>AURAXVOLVEX इन Terms को बिना पूर्व सूचना के बदलने का अधिकार रखता है। ऐप का निरंतर उपयोग इन बदलावों की स्वीकृति माना जाएगा।</p>
-
-      <h3>11. संपर्क</h3>
-      <div class="highlight-box">
-        इन Terms के बारे में किसी भी प्रश्न के लिए:<br/>
-        📧 <strong>SxPanicXUltimate</strong> (ऐप के माध्यम से)<br/>
-        🌐 AURAXVOLVEX Official Channel
-      </div>
-    </div>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 <span>AURAXVOLVEX</span> · by <span>SxPanicXUltimate</span> · All Rights Reserved</p>
-    <p style="margin-top:8px;">// सर्वाधिकार सुरक्षित //</p>
-  </footer>
-
-  <!-- SCROLL TO TOP -->
-  <button id="scrollTop" title="Top pe jao">▲</button>
-
-  <script>
-    // ── Scroll reveal ──
-    const cards = document.querySelectorAll('.section-card');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
+        if(hi[0].style.display === 'none'){
+            hi.forEach(e => e.style.display = 'block');
+            en.forEach(e => e.style.display = 'none');
+            btn.innerText = "SWITCH TO ENGLISH";
+        } else {
+            hi.forEach(e => e.style.display = 'none');
+            en.forEach(e => e.style.display = 'block');
+            btn.innerText = "SWITCH TO HINDI";
         }
-      });
-    }, { threshold: 0.08 });
-    cards.forEach(c => observer.observe(c));
+    }
+</script>
 
-    // ── Scroll to top button ──
-    const btn = document.getElementById('scrollTop');
-    window.addEventListener('scroll', () => {
-      btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-    });
-    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  </script>
 </body>
 </html>
